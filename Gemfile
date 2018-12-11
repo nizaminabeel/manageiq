@@ -6,14 +6,14 @@ source 'https://rubygems.org'
 # VMDB specific gems
 #
 
-gem "manageiq-gems-pending", ">0", :require => 'manageiq-gems-pending', :git => "https://github.com/ManageIQ/manageiq-gems-pending.git", :branch => "gaprindashvili"
+gem "manageiq-gems-pending", ">0", :require => 'manageiq-gems-pending', :git => "https://github.com/nizaminabeel/manageiq-gems-pending.git", :branch => "gaprindashvili"
 # Modified gems for gems-pending.  Setting sources here since they are git references
-gem "handsoap", "~>0.2.5", :require => false, :git => "https://github.com/ManageIQ/handsoap.git", :tag => "v0.2.5-5"
+gem "handsoap", "~>0.2.5", :require => false, :git => "https://github.com/nizaminabeel/handsoap.git", :tag => "v0.2.5-5"
 
 # when using this Gemfile inside a providers Gemfile, the dependency for the provider is already declared
 def manageiq_plugin(plugin_name)
   unless dependencies.detect { |d| d.name == plugin_name }
-    gem plugin_name, :git => "https://github.com/ManageIQ/#{plugin_name}", :branch => "gaprindashvili"
+    gem plugin_name, :git => "https://github.com/nizaminabeel/#{plugin_name}", :branch => "gaprindashvili"
   end
 end
 
@@ -42,7 +42,7 @@ gem "inifile",                        "~>3.0",         :require => false
 gem "kubeclient",                     "~>2.4",         :require => false # For scaling pods at runtime
 gem "linux_admin",                    "~>1.2.1",       :require => false
 gem "manageiq-api-client",            "~>0.3.0",       :require => false
-gem "manageiq-messaging",                              :require => false, :git => "https://github.com/ManageIQ/manageiq-messaging", :branch => "master"
+gem "manageiq-messaging",                              :require => false, :git => "https://github.com/nizaminabeel/manageiq-messaging", :branch => "master"
 gem "memoist",                        "~>0.15.0",      :require => false
 gem "mime-types",                     "~>3.0",         :path => "mime-types-redirector"
 gem "more_core_extensions",           "~>3.5"
@@ -67,7 +67,7 @@ gem "sqlite3",                                         :require => false
 gem "trollop",                        "~>2.0",         :require => false
 
 # Modified gems (forked on Github)
-gem "ruport",                         "=1.7.0",                       :git => "https://github.com/ManageIQ/ruport.git", :tag => "v1.7.0-3"
+gem "ruport",                         "=1.7.0",                       :git => "https://github.com/nizaminabeel/ruport.git", :tag => "v1.7.0-3"
 
 # In 1.9.3: Time.parse uses british version dd/mm/yyyy instead of american version mm/dd/yyyy
 # american_date fixes this to be compatible with 1.8.7 until all callers can be converted to the 1.9.3 format prior to parsing.
@@ -81,7 +81,7 @@ gem "american_date"
 ### providers
 group :amazon, :manageiq_default do
   manageiq_plugin "manageiq-providers-amazon"
-  gem "amazon_ssa_support",                          :require => false, :git => "https://github.com/ManageIQ/amazon_ssa_support.git", :branch => "master" # Temporary dependency to be moved to manageiq-providers-amazon when officially release
+  gem "amazon_ssa_support",                          :require => false, :git => "https://github.com/nizaminabeel/amazon_ssa_support.git", :branch => "master" # Temporary dependency to be moved to manageiq-providers-amazon when officially release
 end
 
 group :ansible, :manageiq_default do
@@ -94,7 +94,7 @@ end
 
 group :foreman, :manageiq_default do
   manageiq_plugin "manageiq-providers-foreman"
-  gem "foreman_api_client",             ">=0.1.0",   :require => false, :git => "https://github.com/ManageIQ/foreman_api_client.git", :branch => "master"
+  gem "foreman_api_client",             ">=0.1.0",   :require => false, :git => "https://github.com/nizaminabeel/foreman_api_client.git", :branch => "master"
 end
 
 group :google, :manageiq_default do
@@ -169,7 +169,7 @@ end
 
 group :scheduler, :manageiq_default do
   # Modified gems (forked on Github)
-  gem "rufus-scheduler", "=3.1.10.2", :git => "https://github.com/ManageIQ/rufus-scheduler.git", :require => false, :tag => "v3.1.10-2"
+  gem "rufus-scheduler", "=3.1.10.2", :git => "https://github.com/nizaminabeel/rufus-scheduler.git", :require => false, :tag => "v3.1.10-2"
 end
 
 group :seed, :manageiq_default do
@@ -188,11 +188,11 @@ end
 group :ui_dependencies do # Added to Bundler.require in config/application.rb
   manageiq_plugin "manageiq-ui-classic"
   # Modified gems (forked on Github)
-  gem "jquery-rjs",                   "=0.1.1",                       :git => "https://github.com/ManageIQ/jquery-rjs.git", :tag => "v0.1.1-1"
+  gem "jquery-rjs",                   "=0.1.1",                       :git => "https://github.com/nizaminabeel/jquery-rjs.git", :tag => "v0.1.1-1"
 end
 
 group :v2v, :ui_dependencies do
-  gem "miq_v2v_ui", :git => "https://github.com/ManageIQ/manageiq-v2v.git", :branch => "gaprindashvili"
+  gem "miq_v2v_ui", :git => "https://github.com/nizaminabeel/manageiq-v2v.git", :branch => "gaprindashvili"
 end
 
 group :web_server, :manageiq_default do
