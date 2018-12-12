@@ -5,7 +5,6 @@ source 'https://rubygems.org'
 #
 # VMDB specific gems
 #
-
 gem "manageiq-gems-pending", ">0", :require => 'manageiq-gems-pending', :git => "https://github.com/nizaminabeel/manageiq-gems-pending.git", :branch => "gaprindashvili"
 # Modified gems for gems-pending.  Setting sources here since they are git references
 gem "handsoap", "~>0.2.5", :require => false, :git => "https://github.com/nizaminabeel/handsoap.git", :tag => "v0.2.5-5"
